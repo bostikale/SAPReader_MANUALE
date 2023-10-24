@@ -564,9 +564,10 @@ fine:
 
                         trovato = False
 
-                        'accorpa i testi delle descrizioni
+						'accorpa i testi delle descrizioni
 
-                        If (SettingsArray(x, Tabella) = "ANAGRAFICA_ARTICOLI_2") Or (SettingsArray(x, Tabella) = "TESTATA_OP_2") Or (SettingsArray(x, Tabella) = "MATRICOLE_REALI_2") Then
+
+						If (SettingsArray(x, Tabella) = "ANAGRAFICA_ARTICOLI_2") Or (SettingsArray(x, Tabella) = "TESTATA_OP_2") Or (SettingsArray(x, Tabella) = "MATRICOLE_REALI_2") Then
 
                             Dim ia As Integer = (dt.Rows.Count - 1)
                             Do While (ia >= 0)
