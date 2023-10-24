@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="SAPReader_SapSOAPOut_ZWS_MES_OUTBOUND_1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://it-sqr1e01.stulz.it:8001/sap/bc/srt/rfc/sap/zws_mes_outbound_1/300/zws_mes_outbound_1/zws_mes_outbound_1_b</Value>
+    </Setting>
+    <Setting Name="SAPReader_SapSOAPin2_ZWS_MES_INBOUND_2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://it-sqr1e01.stulz.it:8001/sap/bc/srt/rfc/sap/zws_mes_inbound_2/300/zws_mes_inbound_2/zws_mes_inbound_2_b</Value>
+    </Setting>
+    <Setting Name="SAPReader_SapSOAPin4_ZWS_MES_INBOUND_4" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://it-sqr1e01.stulz.it:8001/sap/bc/srt/rfc/sap/zws_mes_inbound_4/300/zws_mes_inbound_4/zws_mes_inbound_4_b</Value>
+    </Setting>
+    <Setting Name="SAPReader_SAPSOAPin5_ZWS_MES_INBOUND_5" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://it-sqr1e01.stulz.it:8001/sap/bc/srt/rfc/sap/zws_mes_inbound_5/300/zws_mes_inbound_5/zws_mes_inbound_5_b</Value>
+    </Setting>
+    <Setting Name="SAPReader_SapSOAPin_ZWS_MES_INBOUND_1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://it-sqr1e01.stulz.it:8001/sap/bc/srt/rfc/sap/zws_mes_inbound_1/300/zws_mes_inbound_1/zws_mes_inbound_1_b</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN__ZWS_MES_INBOUND_1_B">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN__ZWS_MES_INBOUND_1_B_soap12">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF__ZWS_MES_INBOUND_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+          <sapsession:enableSession>false</sapsession:enableSession>
+        </sapsession:Session>
+        <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true">
+          <sapcentraladmin:BusinessApplicationID>506B8D8888911EEC85A822204E024424</sapcentraladmin:BusinessApplicationID>
+        </sapcentraladmin:CentralAdministration>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZMES_WS_IN">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char100">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="100" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char132">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="132" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char32">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="32" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char9">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="9" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric5">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="5" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="unit3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZMES_TR_CICLI_ODP">
+        <xsd:sequence>
+          <xsd:element name="N_ORDER_MFG" type="tns:char12" />
+          <xsd:element name="PARALLEL_WAY" type="tns:char2" />
+          <xsd:element name="OPERATION" type="tns:char4" />
+          <xsd:element name="ALTERN_WAY" type="tns:char1" />
+          <xsd:element name="ALTERN_PROGR" type="tns:char1" />
+          <xsd:element name="TIME_SETUP" type="tns:quantum13.3" />
+          <xsd:element name="TIME_WORK" type="tns:quantum13.3" />
+          <xsd:element name="TIME_MAIN" type="tns:quantum13.3" />
+          <xsd:element name="ZPOSITION" type="tns:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_ANAGR_ARTIC_DATI_ULTER">
+        <xsd:sequence>
+          <xsd:element name="ITEM" type="tns:char40" />
+          <xsd:element name="COLOUR" type="tns:char2" />
+          <xsd:element name="C_MATCH_CODE" type="tns:char30" />
+          <xsd:element name="VALORE" type="tns:char255" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_MATERIALI_ODP">
+        <xsd:sequence>
+          <xsd:element name="N_ORDER_MFG" type="tns:char12" />
+          <xsd:element name="COMPONENT" type="tns:char40" />
+          <xsd:element name="COLUR_COMP" type="tns:char2" />
+          <xsd:element name="Q_USE" type="tns:quantum13.3" />
+          <xsd:element name="PREFIX" type="tns:char4" />
+          <xsd:element name="SUFFIX" type="tns:char4" />
+          <xsd:element name="OPERATION" type="tns:char4" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_AVANZAMENTO_LISTE_MAG">
+        <xsd:sequence>
+          <xsd:element name="N_LIST" type="tns:numeric10" />
+          <xsd:element name="N_ORDER_MFG" type="tns:char12" />
+          <xsd:element name="NR_LINES_ACTUAL" type="xsd:short" />
+          <xsd:element name="NR_LINES_CLOSED" type="xsd:short" />
+          <xsd:element name="DATE_ISRT" type="tns:date10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_BOLLE_LAVORO">
+        <xsd:sequence>
+          <xsd:element name="N_BILL_WORK" type="tns:numeric10" />
+          <xsd:element name="STATUS" type="tns:char1" />
+          <xsd:element name="N_ORDER_MFG" type="tns:char12" />
+          <xsd:element name="DATE_REQUEST_BEGIN" type="tns:date10" />
+          <xsd:element name="DATE_REQUEST_END" type="tns:date10" />
+          <xsd:element name="Q_BOOKED" type="tns:quantum13.3" />
+          <xsd:element name="Q_PLANNED" type="tns:quantum13.3" />
+          <xsd:element name="Q_PRODUCED" type="tns:quantum13.3" />
+          <xsd:element name="ITEM" type="tns:char40" />
+          <xsd:element name="COLOR" type="tns:char2" />
+          <xsd:element name="OPERATION" type="tns:char4" />
+          <xsd:element name="TYPE_BOX" type="tns:char10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_MATRICOLE_REALI">
+        <xsd:sequence>
+          <xsd:element name="SERIAL_ID" type="tns:char18" />
+          <xsd:element name="STATUS" type="tns:char30" />
+          <xsd:element name="ITEM" type="tns:char40" />
+          <xsd:element name="COLOUR" type="tns:char2" />
+          <xsd:element name="N_ORDER_MFG" type="tns:char12" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_TESTATA_ODP_INTERNA">
+        <xsd:sequence>
+          <xsd:element name="N_ORDER_MFG" type="tns:char12" />
+          <xsd:element name="STATUS" type="tns:char1" />
+          <xsd:element name="TYPE_ORDER" type="tns:char1" />
+          <xsd:element name="ITEM" type="tns:char40" />
+          <xsd:element name="COLOUR" type="tns:char2" />
+          <xsd:element name="Q_PLANNED" type="tns:quantum13.3" />
+          <xsd:element name="Q_PRODUCED" type="tns:quantum13.3" />
+          <xsd:element name="TYPE_BOX" type="tns:char10" />
+          <xsd:element name="DATE_BEGIN" type="tns:date10" />
+          <xsd:element name="DATE_END" type="tns:date10" />
+          <xsd:element name="DATE_BEGIN_REAL" type="tns:date10" />
+          <xsd:element name="DATE_END_REAL" type="tns:date10" />
+          <xsd:element name="DESCRIPTION_ADD" type="tns:char100" />
+          <xsd:element name="N_LIST" type="tns:numeric10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_NOTE_ARTICOLO">
+        <xsd:sequence>
+          <xsd:element name="KEY1" type="tns:char40" />
+          <xsd:element name="KEY2" type="tns:char2" />
+          <xsd:element name="L_TEXT" type="tns:numeric5" />
+          <xsd:element name="DATA_TEXT" type="tns:char132" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_CYB_PROD">
+        <xsd:sequence>
+          <xsd:element name="ORDINE" type="tns:char12" />
+          <xsd:element name="DATA_IMP_ITALIA" type="tns:date10" />
+          <xsd:element name="DATA_IMP_ESTERO" type="tns:date10" />
+          <xsd:element name="IMP_ITALIA" type="tns:char20" />
+          <xsd:element name="IMP_ESTERO" type="tns:char20" />
+          <xsd:element name="FATTIBILITA" type="tns:char20" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_ANAGR_ARTIC_DATI_ACQ">
+        <xsd:sequence>
+          <xsd:element name="ITEM" type="tns:char40" />
+          <xsd:element name="COLOUR" type="tns:char2" />
+          <xsd:element name="TYPE_TEST" type="tns:char2" />
+          <xsd:element name="CLASS_06" type="tns:char3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_ANAGR_ARTIC">
+        <xsd:sequence>
+          <xsd:element name="ITEM" type="tns:char40" />
+          <xsd:element name="COLOUR" type="tns:char2" />
+          <xsd:element name="DESCRIPTION" type="tns:ZMES_TT_TLINE" />
+          <xsd:element name="STATUS" type="tns:char2" />
+          <xsd:element name="CLASS_06" type="tns:char1" />
+          <xsd:element name="MEASURE_UNIT" type="tns:unit3" />
+          <xsd:element name="CLASS_01" type="tns:char9" />
+          <xsd:element name="ITEM_REF" type="tns:char30" />
+          <xsd:element name="CLASS_03" type="tns:char3" />
+          <xsd:element name="BARCODE" type="tns:char18" />
+          <xsd:element name="CLASS_04" type="tns:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_TLINE">
+        <xsd:sequence>
+          <xsd:element name="TDLINE" type="tns:char132" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_DESCR_LINGUA">
+        <xsd:sequence>
+          <xsd:element name="ITEM" type="tns:char40" />
+          <xsd:element name="COLOUR" type="tns:char2" />
+          <xsd:element name="LANGUAGE" type="tns:char2" />
+          <xsd:element name="DESCRIPTION" type="tns:ZMES_TT_TLINE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_RIGHE_DOCUM_MOVIMENTAZ">
+        <xsd:sequence>
+          <xsd:element name="N_LIST" type="tns:numeric10" />
+          <xsd:element name="L_LIST" type="tns:numeric4" />
+          <xsd:element name="N_ORDER_MFG" type="tns:char12" />
+          <xsd:element name="ITEM" type="tns:char40" />
+          <xsd:element name="COLOUR" type="tns:char2" />
+          <xsd:element name="Q_TO_MOVE" type="tns:quantum13.3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TR_ANAGR_ARTIC_VENDITA">
+        <xsd:sequence>
+          <xsd:element name="ITEM" type="tns:char40" />
+          <xsd:element name="COLOUR" type="tns:char2" />
+          <xsd:element name="CLASS_01" type="tns:char18" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_CICLI_ODP">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_CICLI_ODP" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_ANAGR_ARTIC_DATI_ULTER">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_ANAGR_ARTIC_DATI_ULTER" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_MATERIALI_ODP">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_MATERIALI_ODP" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_AVANZAMENTO_LISTE_MAG">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_AVANZAMENTO_LISTE_MAG" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_BOLLE_LAVORO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_BOLLE_LAVORO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_MATRICOLE_REALI">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_MATRICOLE_REALI" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_TESTATA_ODP_INTERNA">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_TESTATA_ODP_INTERNA" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_NOTE_ARTICOLO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_NOTE_ARTICOLO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_CYB_PROD">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_CYB_PROD" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_ANAGR_ARTIC_DATI_ACQ">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_ANAGR_ARTIC_DATI_ACQ" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_ANAGR_ARTIC">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_ANAGR_ARTIC" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_TLINE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_TLINE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_DESCR_LINGUA">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_DESCR_LINGUA" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_RIGHE_DOCUM_MOVIMENTAZ">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_RIGHE_DOCUM_MOVIMENTAZ" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMES_TT_ANAGR_ARTIC_VENDITA">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZMES_TR_ANAGR_ARTIC_VENDITA" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZMES_WS_IN">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="I_ARTICOLO" type="tns:char40" />
+            <xsd:element minOccurs="0" name="I_DATA_SCHEMA_ELE" type="tns:date10" />
+            <xsd:element name="I_ID_EVENTO" type="tns:char32" />
+            <xsd:element minOccurs="0" name="I_ORDINE_PRODUZIONE" type="tns:char12" />
+            <xsd:element name="I_TIPO_ELABORAZIONE" type="tns:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZMES_WS_INResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="E_ANAGR_ARTIC" type="tns:ZMES_TT_ANAGR_ARTIC" />
+            <xsd:element name="E_ANAGR_ARTIC_DATI_ACQ" type="tns:ZMES_TT_ANAGR_ARTIC_DATI_ACQ" />
+            <xsd:element name="E_ANAGR_ARTIC_DATI_ULTER" type="tns:ZMES_TT_ANAGR_ARTIC_DATI_ULTER" />
+            <xsd:element name="E_ANAGR_ARTIC_VENDITA" type="tns:ZMES_TT_ANAGR_ARTIC_VENDITA" />
+            <xsd:element name="E_AVANZAMENTO_LISTE_MAG" type="tns:ZMES_TT_AVANZAMENTO_LISTE_MAG" />
+            <xsd:element name="E_BOLLE_LAVORO" type="tns:ZMES_TT_BOLLE_LAVORO" />
+            <xsd:element name="E_CICLI_ODP" type="tns:ZMES_TT_CICLI_ODP" />
+            <xsd:element name="E_CYB_PROD" type="tns:ZMES_TT_CYB_PROD" />
+            <xsd:element name="E_DESCR_LINGUA" type="tns:ZMES_TT_DESCR_LINGUA" />
+            <xsd:element name="E_MATERIALI_ODP" type="tns:ZMES_TT_MATERIALI_ODP" />
+            <xsd:element name="E_MATRICOLE_REALI" type="tns:ZMES_TT_MATRICOLE_REALI" />
+            <xsd:element name="E_MESSAGE" type="tns:char220" />
+            <xsd:element name="E_NOTE_ARTICOLO" type="tns:ZMES_TT_NOTE_ARTICOLO" />
+            <xsd:element name="E_RETCODE" type="xsd:int" />
+            <xsd:element name="E_RIGHE_DOCUM_MOVIMENTAZIONE" type="tns:ZMES_TT_RIGHE_DOCUM_MOVIMENTAZ" />
+            <xsd:element name="E_TESTATA_ODP_INTERNA" type="tns:ZMES_TT_TESTATA_ODP_INTERNA" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZMES_WS_IN">
+    <wsdl:part name="parameters" element="tns:ZMES_WS_IN" />
+  </wsdl:message>
+  <wsdl:message name="ZMES_WS_INResponse">
+    <wsdl:part name="parameter" element="tns:ZMES_WS_INResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZWS_MES_INBOUND_1">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem docURL="http://it-sqr1e01.stulz.it:8001/sap/bc/esdt/docu/sd_text?sap-client=300&amp;sd_name=ZWS_MES_INBOUND_1" />
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF__ZWS_MES_INBOUND_1" />
+    </wsp:Policy>
+    <wsdl:operation name="ZMES_WS_IN">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZMES_WS_IN" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZMES_WS_IN" />
+      <wsdl:output message="tns:ZMES_WS_INResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWS_MES_INBOUND_1_B" type="tns:ZWS_MES_INBOUND_1">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZWS_MES_INBOUND_1_B" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZMES_WS_IN">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_MES_INBOUND_1:ZMES_WS_INRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZWS_MES_INBOUND_1_B_soap12" type="tns:ZWS_MES_INBOUND_1">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZWS_MES_INBOUND_1_B_soap12" />
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZMES_WS_IN">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_MES_INBOUND_1:ZMES_WS_INRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWS_MES_INBOUND_1">
+    <wsdl:port name="ZWS_MES_INBOUND_1_B" binding="tns:ZWS_MES_INBOUND_1_B">
+      <soap:address location="http://it-sqr1e01.stulz.it:8001/sap/bc/srt/rfc/sap/zws_mes_inbound_1/300/zws_mes_inbound_1/zws_mes_inbound_1_b" />
+    </wsdl:port>
+    <wsdl:port name="ZWS_MES_INBOUND_1_B_soap12" binding="tns:ZWS_MES_INBOUND_1_B_soap12">
+      <wsoap12:address location="http://it-sqr1e01.stulz.it:8001/sap/bc/srt/rfc/sap/zws_mes_inbound_1/300/zws_mes_inbound_1/zws_mes_inbound_1_b" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
